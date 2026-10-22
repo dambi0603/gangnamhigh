@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="10 4 180 316">
+  <defs>
+    <clipPath id="hex"><polygon points="100,8 186,92 186,232 100,316 14,232 14,92"/></clipPath>
+    <linearGradient id="bar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#a87a30"/>
+      <stop offset=".3" stop-color="#f4dba3"/>
+      <stop offset=".65" stop-color="#ddb46a"/>
+      <stop offset="1" stop-color="#9a6c26"/>
+    </linearGradient>
+    <linearGradient id="faceL" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#c8994a"/>
+      <stop offset="1" stop-color="#f7e2b0"/>
+    </linearGradient>
+    <linearGradient id="faceR" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#e6c482"/>
+      <stop offset=".5" stop-color="#c39343"/>
+      <stop offset="1" stop-color="#8f6222"/>
+    </linearGradient>
+    <linearGradient id="cross" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f6e0aa"/>
+      <stop offset=".45" stop-color="#d9ae62"/>
+      <stop offset="1" stop-color="#a57530"/>
+    </linearGradient>
+    <linearGradient id="vshade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff" stop-opacity=".25"/>
+      <stop offset=".5" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000" stop-opacity=".18"/>
+    </linearGradient>
+  </defs>
+  <g clip-path="url(#hex)">
+    <!-- H 왼쪽 기둥 -->
+    <rect x="14" y="0" width="30" height="320" fill="url(#bar)"/>
+    <!-- H 안쪽 얇은 기둥 (가로획 위·아래) -->
+    <rect x="62" y="0" width="14" height="146" fill="url(#bar)"/>
+    <rect x="62" y="186" width="14" height="134" fill="url(#bar)"/>
+    <!-- H 가로획 -->
+    <polygon points="44,152 86,140 86,170 44,184" fill="url(#cross)"/>
+    <!-- 가운데 기둥 (I) : 두 면 -->
+    <rect x="86" y="0" width="16" height="320" fill="url(#faceL)"/>
+    <rect x="102" y="0" width="22" height="320" fill="url(#faceR)"/>
+    <!-- 오른쪽 기둥 -->
+    <rect x="148" y="0" width="10" height="320" fill="#a77834"/>
+    <rect x="158" y="0" width="28" height="320" fill="url(#bar)"/>
+  </g>
+</svg>

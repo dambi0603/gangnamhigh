@@ -1,0 +1,551 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>강남하이 공인중개사사무소</title>
+<meta name="description" content="강남·서초·용산·성수 아파트, 고급주택, 하이엔드 오피스텔, 상업용 부동산 전문 강남하이 공인중개사사무소. 02-553-9163">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Serif+KR:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+  :root {
+    --white: #ffffff;
+    --ivory: #faf7f0;
+    --cream: #f3ede0;
+    --gold: #c9a24a;
+    --gold-deep: #a8822e;
+    --gold-light: #e6cf94;
+    --ink: #2b2b2b;
+    --ink-soft: #5f5a52;
+    --line: #e7dfcc;
+    --serif-en: "Cormorant Garamond", serif;
+    --serif-ko: "Noto Serif KR", serif;
+    --sans: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); color: var(--ink); background: var(--white); line-height: 1.7; word-break: keep-all; }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .gold-text {
+    background: linear-gradient(135deg, var(--gold-deep), var(--gold-light) 45%, var(--gold) 70%, var(--gold-deep));
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .eyebrow { font-family: var(--serif-en); letter-spacing: .3em; text-transform: uppercase; color: var(--gold); font-size: 14px; }
+  .section { padding: 120px 0; }
+  .section-head { text-align: center; margin-bottom: 64px; }
+  .section-head h2 { font-family: var(--serif-ko); font-weight: 600; font-size: clamp(26px, 3.4vw, 38px); margin-top: 12px; }
+  .section-head p { color: var(--ink-soft); margin-top: 14px; }
+  .divider { width: 48px; height: 1px; background: var(--gold); margin: 22px auto 0; }
+
+  /* Header */
+  header { position: fixed; inset: 0 0 auto 0; z-index: 50; background: rgba(255,255,255,.92); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+  header .wrap { display: flex; align-items: center; justify-content: space-between; height: 92px; }
+  .brand { display: flex; align-items: center; gap: 14px; }
+  .brand img { width: auto; display: block; }
+  .brand .emblem { height: 64px; }
+  .brand .wordmark { height: 36px; }
+  nav { display: flex; gap: 36px; font-size: 15px; font-weight: 500; }
+  nav a { position: relative; padding: 4px 0; }
+  nav a::after { content: ""; position: absolute; left: 0; bottom: 0; width: 0; height: 1px; background: var(--gold); transition: width .3s; }
+  nav a:hover::after { width: 100%; }
+  .header-call { border: 1px solid var(--gold); color: var(--gold-deep); padding: 10px 20px; font-weight: 600; font-size: 15px; transition: .3s; }
+  .header-call:hover { background: var(--gold); color: var(--white); }
+  .menu-btn { display: none; background: none; border: 0; width: 40px; height: 40px; cursor: pointer; }
+  .menu-btn span { display: block; width: 24px; height: 1.5px; background: var(--ink); margin: 6px auto; }
+
+  /* Hero */
+  .hero { position: relative; min-height: 100vh; display: flex; align-items: center; padding-top: 92px; overflow: hidden;
+    background: radial-gradient(ellipse at 80% 20%, #fff 0%, var(--ivory) 45%, var(--cream) 100%); }
+  .hero-skyline { position: absolute; right: 0; bottom: 0; width: min(62vw, 820px); opacity: .9; pointer-events: none; }
+  .hero-content { position: relative; z-index: 2; max-width: 640px; }
+  .hero h1 { font-family: var(--serif-ko); font-weight: 600; font-size: clamp(34px, 5.2vw, 62px); line-height: 1.3; margin: 22px 0 26px; letter-spacing: -.02em; }
+  .hero p { font-size: clamp(16px, 1.6vw, 19px); color: var(--ink-soft); }
+  .hero-tags { display: flex; flex-wrap: wrap; gap: 10px; margin: 32px 0 44px; }
+  .hero-tags span { border: 1px solid var(--gold-light); background: rgba(255,255,255,.7); padding: 6px 16px; font-size: 14px; color: var(--gold-deep); }
+  .btns { display: flex; flex-wrap: wrap; gap: 14px; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 17px 34px; font-weight: 600; font-size: 16px; transition: .3s; cursor: pointer; border: 0; font-family: inherit; }
+  .btn-gold { background: linear-gradient(135deg, var(--gold-deep), var(--gold) 60%, var(--gold-light)); color: var(--white); box-shadow: 0 10px 30px rgba(168,130,46,.25); }
+  .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 14px 34px rgba(168,130,46,.35); }
+  .btn-line { border: 1px solid var(--ink); color: var(--ink); background: transparent; }
+  .btn-line:hover { background: var(--ink); color: var(--white); }
+  .scroll-hint { position: absolute; left: 50%; bottom: 32px; transform: translateX(-50%); font-family: var(--serif-en); letter-spacing: .3em; font-size: 12px; color: var(--gold-deep); z-index: 2; }
+  .scroll-hint::after { content: ""; display: block; width: 1px; height: 40px; background: var(--gold); margin: 10px auto 0; animation: drop 2s infinite; }
+  @keyframes drop { 0% { transform: scaleY(0); transform-origin: top; } 50% { transform: scaleY(1); transform-origin: top; } 51% { transform-origin: bottom; } 100% { transform: scaleY(0); transform-origin: bottom; } }
+
+  /* About */
+  .about { display: grid; grid-template-columns: 1fr 1.1fr; gap: 80px; align-items: center; }
+  .about-visual { position: relative; aspect-ratio: 4/5; background: linear-gradient(160deg, var(--ivory), var(--cream)); border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; }
+  .about-visual::before { content: ""; position: absolute; inset: 20px; border: 1px solid rgba(255,255,255,.7); z-index: 1; pointer-events: none; }
+  .about-visual > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 70%; }
+  .about-visual .badge { z-index: 2; }
+  .about-visual .badge { position: absolute; right: -24px; bottom: 40px; background: var(--white); border: 1px solid var(--line); padding: 22px 28px; box-shadow: 0 20px 40px rgba(0,0,0,.06); }
+  .badge small { display: block; color: var(--ink-soft); font-size: 13px; }
+  .badge strong { font-size: 20px; }
+  .about-text h2 { font-family: var(--serif-ko); font-weight: 600; font-size: clamp(26px, 3.2vw, 36px); line-height: 1.45; margin: 14px 0 28px; }
+  .about-text p { color: var(--ink-soft); margin-bottom: 18px; }
+  .promise { margin-top: 30px; padding: 4px 0 4px 22px; border-left: 2px solid var(--gold); font-family: var(--serif-ko); font-size: 17px; line-height: 1.85; color: var(--ink); }
+  .promise em { font-style: normal; color: var(--gold-deep); font-weight: 600; white-space: nowrap; }
+  .sign { margin-top: 28px; display: flex; align-items: baseline; gap: 14px; }
+  .sign span { font-size: 14px; color: var(--ink-soft); }
+  .sign strong { font-family: var(--serif-ko); font-size: 24px; letter-spacing: .2em; }
+  .values { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); margin-top: 40px; }
+  .values div { background: var(--white); padding: 22px 18px; text-align: center; }
+  .values b { display: block; font-family: var(--serif-en); color: var(--gold); font-size: 22px; font-weight: 500; }
+  .values span { font-size: 14px; color: var(--ink-soft); }
+
+  /* Areas */
+  .areas-bg { background: var(--ivory); }
+  .areas { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .area { position: relative; background: var(--white); border: 1px solid var(--line); padding: 44px 30px 38px; transition: .4s; overflow: hidden; }
+  .area::before { content: ""; position: absolute; left: 0; top: 0; width: 100%; height: 3px; background: linear-gradient(90deg, var(--gold-deep), var(--gold-light)); transform: scaleX(0); transform-origin: left; transition: .4s; }
+  .area:hover { transform: translateY(-6px); box-shadow: 0 24px 48px rgba(168,130,46,.12); }
+  .area:hover::before { transform: scaleX(1); }
+  .area .num { font-family: var(--serif-en); font-size: 15px; color: var(--gold); letter-spacing: .2em; }
+  .area h3 { font-family: var(--serif-ko); font-size: 28px; font-weight: 600; margin: 10px 0 4px; }
+  .area .en { font-family: var(--serif-en); color: var(--ink-soft); letter-spacing: .15em; font-size: 14px; }
+  .area p { color: var(--ink-soft); font-size: 15px; margin: 22px 0; }
+  .area ul { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; }
+  .area li { font-size: 13px; background: var(--ivory); color: var(--gold-deep); padding: 3px 10px; }
+
+  /* Services */
+  .services { display: grid; grid-template-columns: repeat(3, 1fr); grid-auto-flow: dense; gap: 0; border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+  .service { border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 48px 40px; transition: background .3s; }
+  .service:hover { background: var(--ivory); }
+  .service.wide { grid-column: span 2; }
+  .service .icon { width: 52px; height: 52px; color: var(--gold); margin-bottom: 26px; }
+  .service h3 { font-size: 22px; font-weight: 700; margin-bottom: 4px; }
+  .service .en { font-family: var(--serif-en); color: var(--gold); letter-spacing: .15em; font-size: 13px; text-transform: uppercase; }
+  .service p { color: var(--ink-soft); font-size: 15px; margin-top: 18px; }
+  .service.feature { background: linear-gradient(150deg, #fffdf8, var(--cream)); display: flex; flex-direction: column; justify-content: center; }
+  .service.feature h3 { font-family: var(--serif-ko); font-weight: 600; font-size: 26px; line-height: 1.5; }
+
+  /* Process */
+  .process-bg { background: linear-gradient(180deg, var(--white), var(--ivory)); }
+  .process { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; position: relative; }
+  .process::before { content: ""; position: absolute; top: 38px; left: 12%; right: 12%; height: 1px; background: var(--gold-light); }
+  .step { text-align: center; position: relative; }
+  .step .circle { width: 76px; height: 76px; border-radius: 50%; background: var(--white); border: 1px solid var(--gold); margin: 0 auto 24px; display: flex; align-items: center; justify-content: center; font-family: var(--serif-en); font-size: 26px; color: var(--gold-deep); }
+  .step h4 { font-size: 18px; margin-bottom: 8px; }
+  .step p { font-size: 14px; color: var(--ink-soft); }
+
+  /* Contact */
+  .contact { display: grid; grid-template-columns: 1fr 1.2fr; gap: 0; border: 1px solid var(--line); box-shadow: 0 30px 60px rgba(0,0,0,.05); }
+  .contact-info { background: linear-gradient(160deg, #3a3326, #1f1b14); color: #f3ead6; padding: 56px 48px; position: relative; overflow: hidden; }
+  .contact-info::after { content: ""; position: absolute; right: -80px; bottom: -80px; width: 260px; height: 260px; border: 1px solid rgba(230,207,148,.25); border-radius: 50%; }
+  .contact-info h3 { font-family: var(--serif-ko); font-weight: 600; font-size: 28px; margin: 10px 0 14px; color: var(--white); }
+  .contact-info > p { color: #cfc3a8; font-size: 15px; margin-bottom: 40px; }
+  .info-row { display: flex; gap: 18px; padding: 16px 0; border-top: 1px solid rgba(230,207,148,.18); }
+  .info-row:last-child { border-bottom: 1px solid rgba(230,207,148,.18); }
+  .info-row b { font-family: var(--serif-en); color: var(--gold-light); width: 74px; flex-shrink: 0; letter-spacing: .1em; font-weight: 600; }
+  .info-row a:hover { color: var(--gold-light); }
+  form { padding: 56px 48px; background: var(--white); }
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .field { display: flex; flex-direction: column; gap: 8px; }
+  .field.full { grid-column: 1 / -1; }
+  label { font-size: 14px; font-weight: 600; }
+  label em { color: var(--gold-deep); font-style: normal; }
+  input, select, textarea { font-family: inherit; font-size: 15px; padding: 13px 14px; border: 1px solid var(--line); background: #fffdf9; color: var(--ink); outline: none; transition: border .2s; width: 100%; }
+  input:focus, select:focus, textarea:focus { border-color: var(--gold); }
+  textarea { resize: vertical; min-height: 110px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chips label { font-weight: 500; }
+  .chips input { display: none; }
+  .chips span { display: inline-block; padding: 8px 16px; border: 1px solid var(--line); cursor: pointer; font-size: 14px; transition: .2s; }
+  .chips input:checked + span { border-color: var(--gold); background: var(--gold); color: var(--white); }
+  .agree { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--ink-soft); font-weight: 400; margin: 22px 0; }
+  .agree input { width: auto; accent-color: var(--gold); }
+  form .btn { width: 100%; }
+  .form-note { font-size: 13px; color: var(--ink-soft); margin-top: 12px; text-align: center; min-height: 20px; }
+
+  /* Location */
+  .location { display: grid; grid-template-columns: 1.4fr 1fr; gap: 48px; align-items: stretch; }
+  .map-box { position: relative; min-height: 340px; background:
+      linear-gradient(var(--line) 1px, transparent 1px) 0 0 / 40px 40px,
+      linear-gradient(90deg, var(--line) 1px, transparent 1px) 0 0 / 40px 40px, var(--ivory);
+    border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; }
+  .map-box .pin { text-align: center; }
+  .map-box .pin svg { width: 44px; color: var(--gold); }
+  .map-box .pin strong { display: block; margin-top: 8px; font-size: 17px; }
+  .map-links { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; }
+  .map-links a { background: var(--white); border: 1px solid var(--gold); color: var(--gold-deep); font-size: 14px; padding: 8px 16px; font-weight: 600; white-space: nowrap; }
+  .map-links a:hover { background: var(--gold); color: var(--white); }
+  .loc-info h3 { font-family: var(--serif-ko); font-weight: 600; font-size: 26px; margin: 10px 0 24px; }
+  .loc-info dl { display: grid; grid-template-columns: 90px 1fr; row-gap: 16px; font-size: 15px; }
+  .loc-info dt { color: var(--gold-deep); font-weight: 600; }
+
+  /* Footer */
+  footer { background: #1c1913; color: #a99f8a; padding: 56px 0 40px; font-size: 14px; }
+  footer .top { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; padding-bottom: 28px; border-bottom: 1px solid #39332a; }
+  footer .brand .emblem { height: 60px; }
+  footer .brand .wordmark { height: 34px; }
+  footer .legal { margin-top: 28px; line-height: 2; }
+  footer .legal span { display: inline-block; margin-right: 18px; }
+  footer .legal span::after { content: "|"; margin-left: 18px; color: #4a4336; }
+  footer .legal span:last-child::after { content: none; }
+  footer .copy { margin-top: 18px; color: #6f6656; font-size: 13px; }
+
+  /* Floating call (mobile) */
+  .float-call { display: none; position: fixed; right: 18px; bottom: 18px; z-index: 60; width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, var(--gold-deep), var(--gold-light)); box-shadow: 0 10px 24px rgba(168,130,46,.4); align-items: center; justify-content: center; }
+  .float-call svg { width: 26px; color: var(--white); }
+
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity .9s ease, transform .9s ease; }
+  .reveal.on { opacity: 1; transform: none; }
+
+  @media (max-width: 1024px) {
+    .areas { grid-template-columns: repeat(2, 1fr); }
+    .services { grid-template-columns: repeat(2, 1fr); }
+    .about { gap: 48px; }
+  }
+  @media (max-width: 860px) {
+    nav, .header-call { display: none; }
+    .menu-btn { display: block; }
+    nav.open { display: flex; flex-direction: column; gap: 0; position: absolute; top: 92px; left: 0; right: 0; background: var(--white); border-bottom: 1px solid var(--line); padding: 8px 24px 16px; }
+    nav.open a { padding: 14px 0; border-bottom: 1px solid var(--line); }
+    .about, .contact, .location { grid-template-columns: 1fr; }
+    .about-visual { max-width: 420px; margin: 0 auto; width: 100%; }
+    .about-visual .badge { right: 10px; }
+    .process { grid-template-columns: repeat(2, 1fr); row-gap: 40px; }
+    .process::before { display: none; }
+    .hero-skyline { width: 100vw; opacity: .35; }
+    .float-call { display: flex; }
+  }
+  @media (max-width: 560px) {
+    .wrap { padding: 0 16px; }
+    .section { padding: 84px 0; }
+    .areas, .services, .form-grid { grid-template-columns: 1fr; }
+    .service { padding: 38px 28px; }
+    .service.wide { grid-column: auto; }
+    .contact-info, form { padding: 40px 24px; }
+    header .wrap { height: 76px; }
+    .hero { padding-top: 76px; }
+    nav.open { top: 76px; }
+    .brand { gap: 10px; }
+    .brand .emblem { height: 52px; }
+    .brand .wordmark { height: 29px; }
+    .btn { width: 100%; }
+    .values b { font-size: 18px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a href="#top" class="brand">
+      <img src="img/emblem.svg" alt="" class="emblem">
+      <img src="img/logo-text.svg" alt="강남하이 공인중개사사무소" class="wordmark">
+    </a>
+    <nav id="nav">
+      <a href="#about">회사소개</a>
+      <a href="#areas">주력지역</a>
+      <a href="#services">전문분야</a>
+      <a href="#contact">상담신청</a>
+      <a href="#location">오시는 길</a>
+    </nav>
+    <a href="tel:025539163" class="header-call">02-553-9163</a>
+    <button class="menu-btn" aria-label="메뉴 열기" onclick="document.getElementById('nav').classList.toggle('open')"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <svg class="hero-skyline" viewBox="0 0 820 520" fill="none" aria-hidden="true">
+    <defs>
+      <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#e6cf94" stop-opacity=".9"/>
+        <stop offset="1" stop-color="#c9a24a" stop-opacity=".25"/>
+      </linearGradient>
+    </defs>
+    <g stroke="url(#sky)" stroke-width="1.2">
+      <rect x="40" y="300" width="70" height="220"/>
+      <rect x="130" y="220" width="80" height="300"/>
+      <path d="M230 520V140l45-40 45 40v380"/>
+      <rect x="340" y="250" width="60" height="270"/>
+      <path d="M420 520V60h30V30h40v30h30v460"/>
+      <rect x="540" y="180" width="90" height="340"/>
+      <path d="M650 520V120l40-30 40 30v400"/>
+      <rect x="750" y="280" width="60" height="240"/>
+      <g stroke-opacity=".5">
+        <path d="M150 250h40M150 280h40M150 310h40M150 340h40M150 370h40M150 400h40M150 430h40"/>
+        <path d="M440 100v420M470 100v420M500 100v420"/>
+        <path d="M560 210h50M560 240h50M560 270h50M560 300h50M560 330h50M560 360h50M560 390h50M560 420h50"/>
+        <path d="M670 150v370M690 140v380M710 150v370"/>
+        <path d="M250 170v350M275 160v360M300 170v350"/>
+      </g>
+      <path d="M0 519.5h820" stroke-width="1.5"/>
+    </g>
+  </svg>
+  <div class="wrap">
+    <div class="hero-content reveal">
+      <div class="eyebrow">Premium Real Estate · Gangnam High</div>
+      <h1>가치 있는 공간에<br><span class="gold-text">더 높은 기준</span>을 더합니다</h1>
+      <p>강남 · 서초 · 용산 · 성수의 프리미엄 주거와 상업용 부동산.<br>지역을 가장 깊이 아는 전문가가 직접 상담해 드립니다.</p>
+      <div class="hero-tags">
+        <span>아파트</span><span>고급주택</span><span>하이엔드 오피스텔</span><span>상업용 부동산</span>
+      </div>
+      <div class="btns">
+        <a href="#contact" class="btn btn-gold">매물 상담 신청</a>
+        <a href="tel:01020229163" class="btn btn-line">010-2022-9163</a>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint">SCROLL</div>
+</section>
+
+<section class="section" id="about">
+  <div class="wrap about">
+    <div class="about-visual reveal">
+      <img src="img/building.webp" alt="강남 프리미엄 오피스 빌딩">
+      <div class="badge"><small>대표 공인중개사</small><strong>이담비</strong></div>
+    </div>
+    <div class="about-text reveal">
+      <div class="eyebrow">About Us</div>
+      <h2>고객의 자산을 내 일처럼,<br>한 건의 거래도 <span class="gold-text">신중하게.</span></h2>
+      <p>강남하이 공인중개사사무소는 강남·서초·용산·성수 지역의 프리미엄 아파트와 고급주택, 하이엔드 오피스텔, 그리고 상업용 부동산을 전문으로 중개합니다.</p>
+      <p>매물 정보만 전하는 것이 아니라 시세 흐름, 입지 가치, 세무·법률 이슈까지 함께 살펴 고객에게 가장 합리적인 선택을 제안합니다.</p>
+      <blockquote class="promise">성장과 안정의 기반이 될 공간을 찾고 계신 모든 분을 위해<br><em>진심으로 중개합니다.</em><br>고객님과 함께 고민하며 성장하는 든든한 파트너가 되겠습니다.</blockquote>
+      <div class="sign"><span>강남하이 공인중개사사무소 대표</span><strong>이담비</strong></div>
+      <div class="values">
+        <div><b>Trust</b><span>정직한 정보</span></div>
+        <div><b>Expertise</b><span>지역 전문성</span></div>
+        <div><b>Privacy</b><span>철저한 비밀 보장</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section areas-bg" id="areas">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Our Areas</div>
+      <h2>주력 지역</h2>
+      <p>서울에서 가장 가치 있는 네 곳, 현장을 가장 잘 아는 곳입니다.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="areas">
+      <article class="area reveal">
+        <div class="num">01</div>
+        <h3>강남</h3>
+        <div class="en">GANGNAM</div>
+        <p>대한민국 대표 주거·업무 중심지. 랜드마크 아파트와 테헤란로 오피스 시장을 함께 다룹니다.</p>
+        <ul><li>압구정</li><li>청담</li><li>대치</li><li>도곡</li><li>역삼</li><li>삼성</li></ul>
+      </article>
+      <article class="area reveal">
+        <div class="num">02</div>
+        <h3>서초</h3>
+        <div class="en">SEOCHO</div>
+        <p>한강변 신축 대단지와 우수한 학군. 실거주와 자산 가치를 모두 갖춘 지역입니다.</p>
+        <ul><li>반포</li><li>잠원</li><li>서초</li><li>방배</li></ul>
+      </article>
+      <article class="area reveal">
+        <div class="num">03</div>
+        <h3>용산</h3>
+        <div class="en">YONGSAN</div>
+        <p>한남·이촌의 고급주택과 대형 개발 호재가 집중된 서울의 새로운 중심입니다.</p>
+        <ul><li>한남</li><li>이촌</li><li>용산</li><li>동부이촌</li></ul>
+      </article>
+      <article class="area reveal">
+        <div class="num">04</div>
+        <h3>성수</h3>
+        <div class="en">SEONGSU</div>
+        <p>한강 조망 하이엔드 주거와 트렌디한 리테일·오피스가 공존하는 성장 지역입니다.</p>
+        <ul><li>성수동1가</li><li>성수동2가</li><li>서울숲</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Our Expertise</div>
+      <h2>전문 분야</h2>
+      <p>주거부터 상업용 부동산까지, 매매·전세·월세 전 영역을 중개합니다.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="services">
+      <div class="service reveal">
+        <svg class="icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="8" y="10" width="14" height="32"/><rect x="26" y="4" width="14" height="38"/><path d="M12 16h6M12 22h6M12 28h6M30 10h6M30 16h6M30 22h6M30 28h6M4 42h40"/></svg>
+        <div class="en">Apartment</div>
+        <h3>아파트</h3>
+        <p>강남·서초권 랜드마크 단지와 한강변 신축 아파트의 매매·전월세를 정확한 시세 분석과 함께 안내합니다.</p>
+      </div>
+      <div class="service reveal">
+        <svg class="icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 22 24 6l20 16"/><path d="M9 18v24h30V18"/><rect x="20" y="28" width="8" height="14"/><rect x="13" y="24" width="5" height="5"/><rect x="30" y="24" width="5" height="5"/></svg>
+        <div class="en">Luxury House</div>
+        <h3>고급주택</h3>
+        <p>한남·청담·방배 등 고급 단독주택과 빌라. 고객의 프라이버시를 최우선으로 비공개 매물까지 연결합니다.</p>
+      </div>
+      <div class="service reveal">
+        <svg class="icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M14 44V8l10-4 10 4v36"/><path d="M19 14h10M19 20h10M19 26h10M19 32h10"/><path d="M4 44h40"/><path d="M24 4V1"/></svg>
+        <div class="en">High-end Officetel</div>
+        <h3>하이엔드 오피스텔</h3>
+        <p>호텔식 컨시어지 서비스를 갖춘 프리미엄 오피스텔. 실거주와 임대 수익 모두를 고려해 제안합니다.</p>
+      </div>
+      <div class="service wide reveal">
+        <svg class="icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="6" y="6" width="36" height="38"/><path d="M14 14h6M28 14h6M14 22h6M28 22h6M14 30h6M28 30h6"/><rect x="20" y="36" width="8" height="8"/></svg>
+        <div class="en">Commercial Real Estate</div>
+        <h3>상업용 부동산</h3>
+        <p>테헤란로·강남대로·성수 등 핵심 업무·상권 지역의 임대차와 매매를 중개합니다. 입지와 수요 분석을 바탕으로 사업 목적과 투자 계획에 맞는 물건을 제안하고, 임대 조건과 권리관계까지 꼼꼼히 조율합니다.</p>
+      </div>
+      <div class="service feature reveal">
+        <div class="eyebrow">Consulting</div>
+        <h3>찾으시는 매물이<br>목록에 없나요?</h3>
+        <p>공개되지 않은 매물도 많습니다. 원하시는 조건을 남겨 주시면 맞춤으로 찾아 드립니다.</p>
+        <a href="#contact" class="btn btn-gold" style="margin-top:24px;align-self:flex-start">맞춤 매물 요청</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section process-bg">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Process</div>
+      <h2>상담 절차</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="process">
+      <div class="step reveal"><div class="circle">01</div><h4>상담 접수</h4><p>전화 또는 온라인으로<br>원하시는 조건을 알려주세요</p></div>
+      <div class="step reveal"><div class="circle">02</div><h4>맞춤 매물 제안</h4><p>예산·용도·입지를 분석해<br>최적의 매물을 선별합니다</p></div>
+      <div class="step reveal"><div class="circle">03</div><h4>현장 안내</h4><p>대표 중개사가 직접<br>동행하여 안내합니다</p></div>
+      <div class="step reveal"><div class="circle">04</div><h4>계약 · 사후관리</h4><p>권리분석부터 잔금, 입주 이후까지<br>책임지고 관리합니다</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Contact</div>
+      <h2>상담 신청</h2>
+      <p>남겨주신 내용은 대표 중개사가 직접 확인 후 연락드립니다.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="contact reveal">
+      <div class="contact-info">
+        <div class="eyebrow">Gangnam High</div>
+        <h3>강남하이 공인중개사사무소</h3>
+        <p>매매 · 전세 · 월세 · 상업용 임대차<br>편하신 방법으로 문의해 주세요.</p>
+        <div class="info-row"><b>MOBILE</b><a href="tel:01020229163">010-2022-9163</a></div>
+        <div class="info-row"><b>TEL</b><a href="tel:025539163">02-553-9163</a></div>
+        <div class="info-row"><b>FAX</b><span>02-553-9164</span></div>
+        <div class="info-row"><b>E-MAIL</b><a href="mailto:dambi0603@gmail.com">dambi0603@gmail.com</a></div>
+        <div class="info-row"><b>ADDRESS</b><span>서울특별시 강남구 언주로 563,<br>원에디션강남 1층 113호</span></div>
+      </div>
+      <form id="inquiry" novalidate>
+        <div class="form-grid">
+          <div class="field"><label for="name">성함 <em>*</em></label><input id="name" required placeholder="홍길동"></div>
+          <div class="field"><label for="phone">연락처 <em>*</em></label><input id="phone" type="tel" required placeholder="010-0000-0000"></div>
+          <div class="field full">
+            <label>관심 지역</label>
+            <div class="chips">
+              <label><input type="checkbox" name="area" value="강남"><span>강남</span></label>
+              <label><input type="checkbox" name="area" value="서초"><span>서초</span></label>
+              <label><input type="checkbox" name="area" value="용산"><span>용산</span></label>
+              <label><input type="checkbox" name="area" value="성수"><span>성수</span></label>
+              <label><input type="checkbox" name="area" value="기타"><span>기타</span></label>
+            </div>
+          </div>
+          <div class="field">
+            <label for="type">매물 유형</label>
+            <select id="type"><option>아파트</option><option>고급주택</option><option>하이엔드 오피스텔</option><option>상업용 부동산</option><option>기타</option></select>
+          </div>
+          <div class="field">
+            <label for="deal">거래 형태</label>
+            <select id="deal"><option>매매</option><option>전세</option><option>월세</option><option>매도 · 임대 의뢰</option></select>
+          </div>
+          <div class="field full"><label for="msg">문의 내용</label><textarea id="msg" placeholder="희망 예산, 면적, 입주 시기 등 자유롭게 적어주세요."></textarea></div>
+        </div>
+        <label class="agree"><input type="checkbox" id="agree"> 상담을 위한 개인정보(성함, 연락처) 수집 및 이용에 동의합니다.</label>
+        <button type="submit" class="btn btn-gold">상담 신청하기</button>
+        <div class="form-note" id="formNote"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="section areas-bg" id="location">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Location</div>
+      <h2>오시는 길</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="location reveal">
+      <div class="map-box">
+        <div class="pin">
+          <svg viewBox="0 0 24 32" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12c0 9 12 20 12 20s12-11 12-20C24 5.4 18.6 0 12 0Zm0 17a5 5 0 1 1 0-10 5 5 0 0 1 0 10Z"/></svg>
+          <strong>강남하이 공인중개사사무소</strong>
+        </div>
+        <div class="map-links">
+          <a href="https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EA%B0%95%EB%82%A8%EA%B5%AC%20%EC%96%B8%EC%A3%BC%EB%A1%9C%20563" target="_blank" rel="noopener">네이버 지도</a>
+          <a href="https://map.kakao.com/?q=%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EA%B0%95%EB%82%A8%EA%B5%AC%20%EC%96%B8%EC%A3%BC%EB%A1%9C%20563" target="_blank" rel="noopener">카카오맵</a>
+        </div>
+      </div>
+      <div class="loc-info">
+        <div class="eyebrow">Visit Us</div>
+        <h3>방문 상담 안내</h3>
+        <dl>
+          <dt>주소</dt><dd>서울특별시 강남구 언주로 563,<br>원에디션강남 1층 113호</dd>
+          <dt>대표전화</dt><dd><a href="tel:025539163">02-553-9163</a></dd>
+          <dt>휴대폰</dt><dd><a href="tel:01020229163">010-2022-9163</a></dd>
+          <dt>팩스</dt><dd>02-553-9164</dd>
+          <dt>방문 상담</dt><dd>사전 예약 시 더 자세한 상담이 가능합니다.</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="top">
+      <div class="brand"><img src="img/emblem.svg" alt="" class="emblem"><img src="img/logo-text.svg" alt="강남하이 공인중개사사무소" class="wordmark"></div>
+      <a href="tel:025539163" class="header-call" style="display:inline-block">상담 02-553-9163</a>
+    </div>
+    <div class="legal">
+      <span>상호 : 강남하이 공인중개사사무소</span><span>대표 공인중개사 : 이담비</span><span>중개사무소 등록번호 : 제 11680-2024-00146호</span><br>
+      <span>주소 : 서울특별시 강남구 언주로 563, 원에디션강남 1층 113호</span><span>TEL : 02-553-9163</span><span>FAX : 02-553-9164</span><span>E-mail : dambi0603@gmail.com</span>
+    </div>
+    <div class="copy">© 2026 강남하이 공인중개사사무소. All rights reserved.</div>
+  </div>
+</footer>
+
+<a href="tel:01020229163" class="float-call" aria-label="전화 상담">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg>
+</a>
+
+<script>
+  // 스크롤 등장 효과
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } });
+  }, { threshold: .12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // 모바일 메뉴: 링크 클릭 시 닫기
+  document.querySelectorAll('#nav a').forEach(a => a.addEventListener('click', () => document.getElementById('nav').classList.remove('open')));
+
+  // 상담 신청: 서버 없이 메일 앱으로 내용을 채워 보냄
+  document.getElementById('inquiry').addEventListener('submit', e => {
+    e.preventDefault();
+    const note = document.getElementById('formNote');
+    const name = document.getElementById('name').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    if (!name || !phone) { note.textContent = '성함과 연락처를 입력해 주세요.'; return; }
+    if (!document.getElementById('agree').checked) { note.textContent = '개인정보 수집 및 이용에 동의해 주세요.'; return; }
+    const areas = [...document.querySelectorAll('input[name=area]:checked')].map(c => c.value).join(', ') || '미선택';
+    const body = [
+      '성함: ' + name, '연락처: ' + phone, '관심 지역: ' + areas,
+      '매물 유형: ' + document.getElementById('type').value,
+      '거래 형태: ' + document.getElementById('deal').value, '',
+      '문의 내용:', document.getElementById('msg').value
+    ].join('\n');
+    location.href = 'mailto:dambi0603@gmail.com?subject=' + encodeURIComponent('[홈페이지 상담신청] ' + name) + '&body=' + encodeURIComponent(body);
+    note.textContent = '메일 앱이 열리면 전송 버튼을 눌러주세요. 급하신 경우 010-2022-9163으로 연락 주세요.';
+  });
+</script>
+</body>
+</html>
