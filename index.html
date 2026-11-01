@@ -520,7 +520,7 @@
     </div>
     <div class="map-embed reveal">
       <div id="naverMap" class="naver-map" role="region" aria-label="네이버 지도: 강남하이 공인중개사사무소 위치" hidden></div>
-      <iframe id="googleMap" src="https://www.google.com/maps?q=37.50793,127.03817&amp;hl=ko&amp;z=17&amp;output=embed" title="강남하이 공인중개사사무소 위치 지도 (서울특별시 강남구 언주로 563)" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      <iframe id="googleMap" src="https://www.google.com/maps?q=37.508262,127.038391&amp;hl=ko&amp;z=17&amp;output=embed" title="강남하이 공인중개사사무소 위치 지도 (서울특별시 강남구 언주로 563)" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
     </div>
   </div>
 </section>
@@ -582,8 +582,8 @@
   // 네이버 클라우드 플랫폼(Maps > Application)에서 발급받은 Client ID를 아래에 넣으면 네이버 지도가 표시됩니다.
   // 키가 비어 있거나 인증에 실패하면 구글 지도가 대신 표시됩니다.
   const NAVER_MAP_KEY_ID = '';
-  // 서울특별시 강남구 언주로 563 (역삼동 653-4, 원에디션강남) 좌표
-  const OFFICE_LAT = 37.50793, OFFICE_LNG = 127.03817;
+  // 서울특별시 강남구 언주로 563 (원에디션강남) 좌표 — 구글 지도 Plus Code G25Q+892
+  const OFFICE_LAT = 37.508262, OFFICE_LNG = 127.038391;
   const naverBox = document.getElementById('naverMap');
   const googleMap = document.getElementById('googleMap');
   let mapFallbackDone = false;
