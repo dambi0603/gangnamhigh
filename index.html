@@ -137,7 +137,6 @@
   .area h3 { font-family: var(--serif); font-weight: 600; font-size: clamp(30px, 3vw, 40px); line-height: 1.2; letter-spacing: -.02em; }
   .area p { color: var(--ink-2); max-width: 44ch; }
   .area .towns { font-size: 15px; color: var(--ink-3); }
-  .area .towns b { display: block; font-size: 13px; font-weight: 500; color: var(--gold-ink); margin-bottom: 4px; }
 
   /* Services */
   .services { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 48px 64px; align-items: start; }
@@ -371,22 +370,22 @@
       <li class="area reveal">
         <h3>강남</h3>
         <p>대한민국 대표 주거·업무 중심지. 랜드마크 아파트와 테헤란로 오피스 시장을 함께 다룹니다.</p>
-        <div class="towns"><b>주요 동네</b>압구정 · 청담 · 대치 · 도곡 · 역삼 · 삼성</div>
+        <div class="towns">압구정 · 청담 · 대치 · 도곡 · 역삼 · 삼성</div>
       </li>
       <li class="area reveal">
         <h3>서초</h3>
         <p>한강변 신축 대단지와 우수한 학군. 실거주와 자산 가치를 모두 갖춘 지역입니다.</p>
-        <div class="towns"><b>주요 동네</b>반포 · 잠원 · 서초 · 방배</div>
+        <div class="towns">반포 · 잠원 · 서초 · 방배</div>
       </li>
       <li class="area reveal">
         <h3>용산</h3>
         <p>한남·이촌의 고급주택과 대형 개발 호재가 집중된 서울의 새로운 중심입니다.</p>
-        <div class="towns"><b>주요 동네</b>한남 · 이촌 · 용산 · 동부이촌</div>
+        <div class="towns">한남 · 이촌 · 용산 · 동부이촌</div>
       </li>
       <li class="area reveal">
         <h3>성수</h3>
         <p>한강 조망 하이엔드 주거와 트렌디한 리테일·오피스가 공존하는 성장 지역입니다.</p>
-        <div class="towns"><b>주요 동네</b>성수동1가 · 성수동2가 · 서울숲</div>
+        <div class="towns">성수동1가 · 성수동2가 · 서울숲</div>
       </li>
     </ul>
   </div>
@@ -521,7 +520,7 @@
     </div>
     <div class="map-embed reveal">
       <div id="naverMap" class="naver-map" role="region" aria-label="네이버 지도: 강남하이 공인중개사사무소 위치" hidden></div>
-      <iframe id="googleMap" data-src="https://www.google.com/maps?q=%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EA%B0%95%EB%82%A8%EA%B5%AC%20%EC%96%B8%EC%A3%BC%EB%A1%9C%20563&amp;hl=ko&amp;z=17&amp;output=embed" title="강남하이 공인중개사사무소 위치 지도 (서울특별시 강남구 언주로 563)" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      <iframe id="googleMap" data-src="https://maps.google.com/maps?q=37.50793,127.03817&amp;hl=ko&amp;z=17&amp;output=embed" title="강남하이 공인중개사사무소 위치 지도 (서울특별시 강남구 언주로 563)" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
     </div>
   </div>
 </section>
@@ -583,7 +582,8 @@
   // 네이버 클라우드 플랫폼(Maps > Application)에서 발급받은 Client ID를 아래에 넣으면 네이버 지도가 표시됩니다.
   // 키가 비어 있거나 인증에 실패하면 구글 지도가 대신 표시됩니다.
   const NAVER_MAP_KEY_ID = '';
-  const OFFICE_ADDRESS = '서울특별시 강남구 언주로 563';
+  // 서울특별시 강남구 언주로 563 (역삼동 653-4, 원에디션강남) 좌표
+  const OFFICE_LAT = 37.50793, OFFICE_LNG = 127.03817;
   const naverBox = document.getElementById('naverMap');
   const googleMap = document.getElementById('googleMap');
   let mapFallbackDone = false;
@@ -597,27 +597,24 @@
   };
   window.navermap_authFailure = showGoogleMap; // 키 인증 실패 시 네이버가 호출
   window.initNaverMap = () => {
-    naver.maps.Service.geocode({ query: OFFICE_ADDRESS }, (status, res) => {
-      const addr = status === naver.maps.Service.Status.OK && res.v2 && res.v2.addresses[0];
-      if (!addr || mapFallbackDone) { showGoogleMap(); return; }
-      const pos = new naver.maps.LatLng(+addr.y, +addr.x);
-      googleMap.hidden = true;
-      naverBox.hidden = false;
-      const map = new naver.maps.Map(naverBox, {
-        center: pos, zoom: 17, scrollWheel: false,
-        zoomControl: true, zoomControlOptions: { position: naver.maps.Position.TOP_RIGHT, style: naver.maps.ZoomControlStyle.SMALL }
-      });
-      new naver.maps.Marker({
-        position: pos, map,
-        title: '강남하이 공인중개사사무소',
-        icon: { content: '<div class="map-pin"><span>강남하이 공인중개사사무소</span><i></i><b></b></div>', anchor: new naver.maps.Point(0, 0) }
-      });
+    if (mapFallbackDone) return;
+    const pos = new naver.maps.LatLng(OFFICE_LAT, OFFICE_LNG);
+    googleMap.hidden = true;
+    naverBox.hidden = false;
+    const map = new naver.maps.Map(naverBox, {
+      center: pos, zoom: 17, scrollWheel: false,
+      zoomControl: true, zoomControlOptions: { position: naver.maps.Position.TOP_RIGHT, style: naver.maps.ZoomControlStyle.SMALL }
+    });
+    new naver.maps.Marker({
+      position: pos, map,
+      title: '강남하이 공인중개사사무소',
+      icon: { content: '<div class="map-pin"><span>강남하이 공인중개사사무소</span><i></i><b></b></div>', anchor: new naver.maps.Point(0, 0) }
     });
   };
   const loadMap = () => {
     if (!NAVER_MAP_KEY_ID) { showGoogleMap(); return; }
     const sc = document.createElement('script');
-    sc.src = 'https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=' + encodeURIComponent(NAVER_MAP_KEY_ID) + '&submodules=geocoder&callback=initNaverMap';
+    sc.src = 'https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=' + encodeURIComponent(NAVER_MAP_KEY_ID) + '&callback=initNaverMap';
     sc.async = true;
     sc.onerror = showGoogleMap;
     document.head.appendChild(sc);
