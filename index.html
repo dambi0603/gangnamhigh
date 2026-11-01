@@ -520,7 +520,7 @@
     </div>
     <div class="map-embed reveal">
       <div id="naverMap" class="naver-map" role="region" aria-label="네이버 지도: 강남하이 공인중개사사무소 위치" hidden></div>
-      <iframe id="googleMap" data-src="https://maps.google.com/maps?q=37.50793,127.03817&amp;hl=ko&amp;z=17&amp;output=embed" title="강남하이 공인중개사사무소 위치 지도 (서울특별시 강남구 언주로 563)" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      <iframe id="googleMap" src="https://www.google.com/maps?q=37.50793,127.03817&amp;hl=ko&amp;z=17&amp;output=embed" title="강남하이 공인중개사사무소 위치 지도 (서울특별시 강남구 언주로 563)" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
     </div>
   </div>
 </section>
@@ -593,7 +593,6 @@
     naverBox.hidden = true;
     naverBox.innerHTML = '';
     googleMap.hidden = false;
-    googleMap.src = googleMap.dataset.src;
   };
   window.navermap_authFailure = showGoogleMap; // 키 인증 실패 시 네이버가 호출
   window.initNaverMap = () => {
@@ -612,7 +611,7 @@
     });
   };
   const loadMap = () => {
-    if (!NAVER_MAP_KEY_ID) { showGoogleMap(); return; }
+    if (!NAVER_MAP_KEY_ID) return; // 키가 없으면 HTML에 있는 구글 지도를 그대로 사용
     const sc = document.createElement('script');
     sc.src = 'https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=' + encodeURIComponent(NAVER_MAP_KEY_ID) + '&callback=initNaverMap';
     sc.async = true;
